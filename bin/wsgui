@@ -1,0 +1,9 @@
+OLDPS=$PS1
+WS=`conda workspace --gui`
+if [ -n "$WS" ]
+then
+    source activate $WS
+    export PS1="($(basename $WS))$OLDPS"
+else
+    echo "cancelled"
+fi

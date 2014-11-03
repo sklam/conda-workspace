@@ -1,0 +1,4 @@
+OLDPS=$PS1
+WS=`conda workspace --activate $@`
+source activate $WS
+export PS1="($(basename $WS))$OLDPS"
